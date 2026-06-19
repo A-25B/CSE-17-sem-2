@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee System</title>
+</head>
+
+<body>
+
+<input id="name" placeholder="Name">
+<input id="id" placeholder="ID">
+<input id="salary" placeholder="Salary">
+<input id="dept" placeholder="Dept">
+
+<button onclick="add()">Add</button>
+<button onclick="show()">Display</button>
+
+<p id="result"></p>
+
+<script>
+let employees=[];
+
+function add(){
+    let emp={
+        name:document.getElementById("name").value,
+        id:document.getElementById("id").value,
+        salary:Number(document.getElementById("salary").value),
+        dept:document.getElementById("dept").value
+    };
+    employees.push(emp);
+}
+
+function show(){
+    let output="";
+    for(let e of employees){
+        output+=e.name+" "+e.salary+"<br>";
+    }
+    document.getElementById("result").innerHTML=output;
+}
+</script>
+
+</body>
+</html>
